@@ -1,2 +1,1 @@
-# windows-system-programming-toolkit
-Windows System Programming Toolkit
+# **`WSPT`** | Windows System Programming Toolkit
