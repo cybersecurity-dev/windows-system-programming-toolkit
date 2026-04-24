@@ -1,4 +1,9 @@
 <div align="center">
+    <p align="center">
+        <a href="https://github.com/cybersecurity-dev/awesome-windows-system-programming">
+          <img width="30%" src="https://github.com/cybersecurity-dev/cybersecurity-dev/blob/main/assets/Windows.svg" />
+        </a>
+    </p>
 
 # **`WSPT`** | Windows System Programming Toolkit [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 </div>
