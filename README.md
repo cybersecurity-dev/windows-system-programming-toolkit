@@ -1,13 +1,13 @@
 <div align="center">
     <p align="center">
         <a href="https://github.com/cybersecurity-dev/awesome-windows-system-programming">
-          <img width="30%" src="https://github.com/cybersecurity-dev/cybersecurity-dev/blob/main/assets/Windows.svg" />
+          <img width="20%" src="https://github.com/cybersecurity-dev/cybersecurity-dev/blob/main/assets/Windows.svg" />
         </a>
     </p>
 
 ```mermaid
 mindmap
-  root((Windows System Programming))
+  root((Windows<br/>System<br/>Programming))
     Foundations
       Windows architecture
         User mode
