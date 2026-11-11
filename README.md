@@ -308,7 +308,7 @@ flowchart TB
 ```
 
 ## 📖 Contents
-- [My Other Awesome Lists](#my-other-awesome-lists)
+- [My Awesome Lists](#my-awesome-lists)
 - [Contributing](#contributing)
 - [Contributors](#contributors)
 
@@ -390,8 +390,8 @@ flowchart TB
 
 ##
 
-### My Other Awesome Lists
-You can access the my other awesome lists [here](https://cyberthreatdefence.com/my_awesome_lists)
+### My Awesome Lists
+You can access the my awesome lists [here](https://cyberthreatdefence.com/my_awesome_lists)
 
 ### Contributing
 [Contributions of any kind welcome, just follow the guidelines](contributing.md)!
