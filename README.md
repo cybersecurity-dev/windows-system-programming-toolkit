@@ -207,6 +207,106 @@ mindmap
     <img src="https://github.com/cybersecurity-dev/cybersecurity-dev/blob/main/assets/bar.gif">
 </p>
 
+```mermaid
+flowchart TB
+    USER["User or Administrator"]
+
+    subgraph USERSPACE["User Mode"]
+        APP["Applications, Services and System Utilities"]
+        LANG["C, C++, C#, Rust and Assembly"]
+        TOOL["Visual Studio, MSVC, Windows SDK and WDK"]
+        LIB["Win32, COM, WinRT and .NET Libraries"]
+        OBS["WinDbg, Process Monitor, WPR, WPA and PerfView"]
+
+        LANG --> APP
+        TOOL --> APP
+        APP --> LIB
+        OBS -. "observes" .-> APP
+    end
+
+    USER --> APP
+    LIB --> API["Win32 API and Native API"]
+    API --> NTDLL["ntdll.dll System-Service Stubs"]
+
+    subgraph SYSCALLS["System-Service Boundary"]
+        PS["Process and Thread Services"]
+        VM["Virtual-Memory Services"]
+        IO["File and Device I/O Services"]
+        IPC["ALPC and IPC Services"]
+        SEC["Security and Token Services"]
+        REG["Registry Services"]
+    end
+
+    NTDLL --> PS
+    NTDLL --> VM
+    NTDLL --> IO
+    NTDLL --> IPC
+    NTDLL --> SEC
+    NTDLL --> REG
+
+    subgraph KERNELMODE["Kernel Mode"]
+        NT["Windows NT Kernel and Executive"]
+        PM["Process and Thread Manager"]
+        MM["Memory Manager"]
+        IOM["I/O Manager"]
+        OM["Object Manager"]
+        SM["Security Reference Monitor"]
+        CM["Configuration Manager"]
+        CACHE["Cache Manager"]
+        ETW["ETW and Kernel Instrumentation"]
+        DRV["WDM, KMDF, UMDF and Filter Drivers"]
+        HAL["Hardware Abstraction Layer"]
+
+        NT --> PM
+        NT --> MM
+        NT --> IOM
+        NT --> OM
+        NT --> SM
+        NT --> CM
+        NT --> CACHE
+        NT --> ETW
+        NT --> DRV
+    end
+
+    PS --> PM
+    VM --> MM
+    IO --> IOM
+    IPC --> OM
+    SEC --> SM
+    REG --> CM
+
+    OBS -. "traces and debugs" .-> ETW
+
+    IOM --> DRV
+    DRV --> HAL
+
+    subgraph HARDWARE["Hardware"]
+        CPU["CPU"]
+        RAM["Physical Memory"]
+        DISK["Storage"]
+        NIC["Network Adapter"]
+        DEV["USB and Peripheral Devices"]
+    end
+
+    HAL --> CPU
+    HAL --> RAM
+    HAL --> DISK
+    HAL --> NIC
+    HAL --> DEV
+
+    classDef person fill:#172554,color:#fff,stroke:#0f172a,stroke-width:3px;
+    classDef user fill:#dbeafe,color:#172554,stroke:#2563eb;
+    classDef boundary fill:#fef3c7,color:#78350f,stroke:#f59e0b,stroke-width:2px;
+    classDef kernel fill:#dcfce7,color:#14532d,stroke:#16a34a;
+    classDef hardware fill:#fee2e2,color:#7f1d1d,stroke:#dc2626;
+
+    class USER person;
+    class APP,LANG,TOOL,LIB,OBS user;
+    class API,NTDLL,PS,VM,IO,IPC,SEC,REG boundary;
+    class NT,PM,MM,IOM,OM,SM,CM,CACHE,ETW,DRV,HAL kernel;
+    class CPU,RAM,DISK,NIC,DEV hardware;
+```
+
 ## 📖 Contents
 - [My Other Awesome Lists](#my-other-awesome-lists)
 - [Contributing](#contributing)
